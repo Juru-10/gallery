@@ -11,13 +11,15 @@
 
   </div>
 
-  <div class="row">
+  <div class="row"style="display:grid;grid-template-columns: 30% 30% 30%;
+      grid-auto-rows: 25.6em;
+      grid-gap: 60px;">
 
   {% if images %}
     {% for image in images %}
       <div class="col-sm-6 col-md-3">
           <h1>{{image.name}}</h1>
-          <a href=""><img src="{{image.image.url}}" alt="{{image.image}}"></a>
+          <a href=""><img style="height:200px;width:300px;"src="{{image.image.url}}" alt="{{image.image}}"></a>
 
       </div>
     {% endfor %}
