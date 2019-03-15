@@ -62,10 +62,10 @@ def image(request,image_id):
         raise Http404()
     return render(request,"all-image/image.html", {"image":image})
 
-def image_details(request):
+def all_images(request,date):
     if date == dt.date.today():
         image = Image.todays_image()
     else:
         image = Image.days_image(date)
 
-    return render(request,"all-image/image.html", {"date": date,"image":image})
+    return render(request,"all-image/today-image.html", {"date": date,"image":image})
