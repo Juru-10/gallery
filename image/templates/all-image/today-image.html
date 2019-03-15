@@ -1,0 +1,30 @@
+{%extends 'all-image/base.html'%}
+
+{% block content %}
+{{block.super}}
+
+<div class="container">
+  <!-- Looping through image   -->
+  {% for image in images %}
+
+  <div class="row">
+    <!-- displaying image images -->
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <h2 class="text-center"> {{ image.name }} </h2>
+    </div>
+
+    <!--Display image image images  -->
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <img src="{{image.image.url}}" class="img-responsive" alt="Image">
+    </div>
+
+  </div>
+
+  {% empty %}
+  <div class="row">
+    <h2 class="text-center">There No image Items</h2>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
