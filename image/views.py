@@ -36,13 +36,20 @@ def search_results(request):
         search_id = request.GET.get("image")
         search_loc = request.GET.get("image")
         search_cat = request.GET.get("image")
+        if search_id == request.GET.get("image"):
+            searched_images_id = Image.get_image_by_id(search_id)
+            message = f"{search_id}"
+            return render(request, 'all-image/search.html',{"message":message,"images": searched_images_id})
 
-        searched_images_id = Image.get_image_by_id(search_id)
-        searched_images_loc = Image.filter_by_location(search_loc)
-        searched_images_cat = Image.search_image(search_cat)
-        message = f"{search_id}{search_loc}{search_cat}"
+        elif search_loc == request.GET.get("image"):
+            searched_images_loc = Image.filter_by_location(search_loc)
+            message = f"{search_loc}"
+            return render(request, 'all-image/search.html',{"message":message,"images":searched_images_loc})
 
-        return render(request, 'all-image/search.html',{"message":message,"images": searched_images_id,"images":searched_images_loc,"images":searched_images_cat})
+        elif search_cat == request.GET.get("image"):
+            searched_images_cat = Image.search_image(search_cat)
+            message = f"{search_cat}"
+            return render(request, 'all-image/search.html',{"message":message,"images":searched_images_cat})
 
     else:
         message = "You haven't searched for any term"
