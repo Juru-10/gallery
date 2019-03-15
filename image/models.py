@@ -63,7 +63,7 @@ class Location(models.Model):
 
 
 class Image(models.Model):
-    id = models.IntegerField(primary_key=True)
+    # id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length =60)
     description = models.TextField()
     editor = models.ForeignKey(Editor)
@@ -96,16 +96,21 @@ class Image(models.Model):
         return image
 
     @classmethod
-    def get_image_by_id(cls,search_id):
-        image = cls.objects.filter(id__icontains=search_id)
+    def image_details(cls,image_id):
+        image = cls.objects.get(pk = image_id)
         return image
+
+    # @classmethod
+    # def get_image_by_id(cls,search_id):
+    #     image = cls.objects.filter(id__icontains=search_id)
+    #     return image
 
     @classmethod
     def search_image(cls,search_cat):
-        image = cls.objects.filter(category__icontains=search_cat)
+        image = cls.objects.filter(category__name__icontains=search_cat)
         return image
 
     @classmethod
     def filter_by_location(cls,search_loc):
-        image = cls.objects.filter(location__icontains=search_loc)
+        image = cls.objects.filter(location__name__icontains=search_loc)
         return image

@@ -5,22 +5,20 @@
  <div class="container">
 
    <div class="row">
-     <h1 class="text-center">{{image.name}}</h1>
-   </div>
+     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+       <h1 class="text-center">{{image.name}}</h1>
+       <img src="{{image.image.url}}" alt="{{image.name}}">
+     </div>
 
-   <div class="row">
-     <img src="{{image.image.url}}" alt="{{image.name}}">
+     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+       <p>{{image.location}}</p>
+       <p>{{image.category}}</p>
+       <p>{{image.description}}</p>
+     </div>
    </div>
-
-   <div class="row">
-     <p>{{image.location}}</p>
-     <p>{{image.category}}</p>
-     <p>{{image.description}}</p>
-   </div>
-
-   <div class="row">
+  <div class="row">
      <p>Posted {{image.pub_date|timesince}} by {{image.editor.first_name}}</p>
-   </div>
+  </div>
 
  </div>
 

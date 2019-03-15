@@ -7,15 +7,14 @@
   <!-- Looping through images   -->
   {% for image in image %}
 
-  <div class="row" id="images">
+  <div class="row" id="box">
     <!-- displaying images -->
-    <h2> {{ image.name }} </h2>
-    <img src="{{image.image.url}}" class="img-responsive" alt="Image">
-
-    <!-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-
-    </div> -->
-
+    <div class="border"class="center">
+      <h2> {{ image.name }} </h2>
+      <a href=""><img src="{{image.image.url}}" class="img-responsive" alt="Image"></a>
+      <p>Posted {{image.pub_date|timesince}} ago</p>
+      <p>by {{image.editor.first_name}}</p>
+    </div>
     <!--Display image image images  -->
     <!-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 

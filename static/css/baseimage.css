@@ -1,8 +1,21 @@
 h1{
   color:magenta;
 }
-#images{
+.container{
+  /* background: #f0a4f0;
+  padding-left: 75px; */
+}
+#box{
+  /* box-sizing: border-box;
   float:left;
+  width:33.33%;
+  margin: auto; */
+  display: inline-grid;
   width:30%;
-  /* padding:10px; */
+}
+.border{
+  
+}
+img{
+  /* width:30%; */
 }
