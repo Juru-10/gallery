@@ -53,6 +53,9 @@ def image(request,image_id):
     return render(request,"all-image/image.html", {"image":image})
 
 def image_details(request):
-    date = dt.date.today()
-    image = Image.todays_image()
+    if date == dt.date.today():
+        image = Image.todays_image()
+    else:
+        image = Image.days_image(date)
+
     return render(request,"all-image/image.html", {"date": date,"image":image})
