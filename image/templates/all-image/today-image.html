@@ -7,7 +7,7 @@
   <!-- Looping through images   -->
   {% for image in image %}
 
-  <div class="row">
+  <div class="row" id="images">
     <!-- displaying images -->
     <h2> {{ image.name }} </h2>
     <img src="{{image.image.url}}" class="img-responsive" alt="Image">
