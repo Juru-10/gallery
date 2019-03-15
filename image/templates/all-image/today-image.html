@@ -11,7 +11,7 @@
     <!-- displaying images -->
     <div class="border"class="center">
       <h2> {{ image.name }} </h2>
-      <a href=""><img src="{{image.image.url}}" class="img-responsive" alt="Image"></a>
+      <a href="{% url 'image_details' %}"><img src="{{image.image.url}}" class="img-responsive" alt="Image"></a>
       <p>Posted {{image.pub_date|timesince}} ago</p>
       <p>by {{image.editor.first_name}}</p>
     </div>

@@ -1,5 +1,6 @@
 from django.db import models
 import datetime as dt
+from django.db.models import Q
 
 class Editor(models.Model):
     first_name = models.CharField(max_length =30)
@@ -106,11 +107,14 @@ class Image(models.Model):
     #     return image
 
     @classmethod
-    def search_image(cls,search_cat):
-        image = cls.objects.filter(category__name__icontains=search_cat)
+    def search_image(cls,search_cat,search_loc):
+        image = cls.objects.filter(
+        Q(category__name__icontains=search_cat) |
+        Q(location__name__icontains=search_loc)
+        )
         return image
 
-    @classmethod
-    def filter_by_location(cls,search_loc):
-        image = cls.objects.filter(location__name__icontains=search_loc)
-        return image
+    # @classmethod
+    # def filter_by_location(cls,search_loc):
+    #     image = cls.objects.filter(location__name__icontains=search_loc)
+    #     return image

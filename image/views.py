@@ -40,14 +40,14 @@ def search_results(request):
         # search_id = request.GET.get("image")
 
         if search_cat == request.GET.get("image"):
-            searched_images_cat = Image.search_image(search_cat)
-            message = f"{search_cat}"
+            searched_images_cat = Image.search_image(search_cat,search_loc)
+            message = f"{search_cat} | {search_loc}"
             return render(request, 'all-image/search.html',{"message":message,"images":searched_images_cat})
 
-        elif search_loc == request.GET.get("image"):
-            searched_images_loc = Image.filter_by_location(search_loc)
-            message = f"{search_loc}"
-            return render(request, 'all-image/search.html',{"message":message,"images":searched_images_loc})
+        # elif search_loc == request.GET.get("image"):
+        #     searched_images_loc = Image.filter_by_location(search_loc)
+        #     message = f"{search_loc}"
+        #     return render(request, 'all-image/search.html',{"message":message,"images":searched_images_loc})
 
         # elif search_id == request.GET.get("image"):
         #     searched_images_id = Image.get_image_by_id(search_id)
@@ -59,17 +59,17 @@ def search_results(request):
         message = "You haven't searched for any term"
         return render(request, 'all-image/search.html',{"message":message})
 
-# def image_details(request,image_id):
-#     try:
-#         image = Image.objects.get(id = image_id)
-#     except DoesNotExist:
-#         raise Http404()
-#     return render(request,"all-image/image.html", {"image":image})
+def image_details(request,pk):
+    try:
+        image = Image.objects.get(pk = image_id)
+    except DoesNotExist:
+        raise Http404()
+    return render(request,"all-image/image.html", {"image":image})
 
-def image_details(request):
-    image_id=Image.pk
-    image=Image.image_details(pk=image_id)
-    return render(request,"all-image/image.html", {"image":image,"image_id":image_id})
+# def image_details(request):
+#     image_id=Image.pk
+#     image=Image.image_details(pk=image_id)
+#     return render(request,"all-image/image.html", {"image":image,"image_id":image_id})
 
 def all_images(request):
     image=Image.objects.all()
