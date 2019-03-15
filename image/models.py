@@ -96,16 +96,16 @@ class Image(models.Model):
         return image
 
     @classmethod
-    def get_image_by_id(cls,search_term):
-        image = cls.objects.filter(id__icontains=search_term)
+    def get_image_by_id(cls,search_id):
+        image = cls.objects.filter(id__icontains=search_id)
         return image
 
     @classmethod
-    def search_image(cls,search_term):
-        image = cls.objects.filter(category__icontains=search_term)
+    def search_image(cls,search_cat):
+        image = cls.objects.filter(category__icontains=search_cat)
         return image
 
     @classmethod
-    def filter_by_location(cls,search_term):
-        image = cls.objects.filter(location__icontains=search_term)
+    def filter_by_location(cls,search_loc):
+        image = cls.objects.filter(location__icontains=search_loc)
         return image
