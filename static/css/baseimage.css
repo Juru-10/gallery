@@ -34,3 +34,7 @@ img{
   border-radius: 20px;
   padding:20px;
 }
+ footer{
+   height:150px;
+   background-color: green;
+ }

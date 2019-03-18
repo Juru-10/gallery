@@ -6,70 +6,44 @@
 <div class="container">
   <!-- Looping through images   -->
   <div class="row">
-
-      <div class="imgs">
-            {% for image in image %}
-            <div id="img" style='float:left;margin:3%;'>
-              <h2> {{ image.name }} </h2>
-              <a href="{% url 'image_details' image.id %}" data-toggle="modal" data-target="#Modal"><img style="height:200px;width:300px;"src="{{image.image.url}}" class="img-responsive" alt="Image"></a>
-              <p>Posted <strong>{{image.pub_date|timesince}}</strong> ago</p>
-              <p>by <strong>{{image.editor.first_name}}</strong></p>
-            </div>
-            <div id="Modal" class="modal fade" role="dialog">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <div class="modal-title"><h3>Image Details</h3></div>
-                  <div class="row">
-                    <div class="" style=''>
-                      <h1 class="">{{image.name}}</h1>
-                      <img src="{{image.image.url}}" style='float:left;height:80%;width:50%;margin-right:60px;' alt="{{image.name}}">
+    <div class="imgs">
+      {% for image in image %}
+        <div id="img" style='float:left;margin:3%;'>
+          <h2> {{ image.name }} </h2>
+          <a href="{% url 'image_details' image.id %}" data-toggle="modal" data-target="#Modal"><img style="height:200px;width:300px;"src="{{image.image.url}}" class="img-responsive" alt="Image"></a>
+          <p>Posted <strong>{{image.pub_date|timesince}}</strong> ago</p>
+          <p>by <strong>{{image.editor.first_name}}</strong></p>
+        </div>
+        <div id="Modal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <div class="modal-title"><h3>Image Details</h3></div>
+                <div class="row">
+                  <div class="" style=''>
+                    <h1 class="">{{image.name}}</h1>
+                    <img src="{{image.image.url}}" style='float:left;height:80%;width:50%;margin-right:60px;' alt="{{image.name}}">
+                  </div>
+                  <div class="" style='margin-top:100px;'>
+                    <div class="">
+                      <p>Place : {{image.location}}</p>
+                      <p>Category : {{image.category}}</p>
+                      <p>Description : {{image.description}}</p>
                     </div>
-
-                    <div class="" style='margin-top:100px;'>
-                      <div class="">
-                        <p>Place : {{image.location}}</p>
-                        <p>Category : {{image.category}}</p>
-                        <p>Description : {{image.description}}</p>
-                      </div>
-                      <div class=""style='margin-top:100px;'>
-                        <p>Posted <strong>{{image.pub_date|timesince}}</strong> ago</p>
-                        <p>by <strong>{{image.editor.first_name}}</strong></p>
-                      </div>
+                    <div class=""style='margin-top:100px;'>
+                      <p>Posted <strong>{{image.pub_date|timesince}}</strong> ago</p>
+                      <p>by <strong>{{image.editor.first_name}}</strong></p>
                     </div>
                   </div>
-
-                </div>
               </div>
             </div>
-            <!-- <div class="bg-modal">
-                <div class="modal-content">
-                  <div class="row">
-                    <div class="" style=''>
-                      <h1 class="">{{image.name}}</h1>
-                      <img src="{{image.image.url}}" style='float:left;height:80%;width:50%;margin-right:60px;' alt="{{image.name}}">
-                    </div>
-
-                    <div class="" style='margin-top:100px;'>
-                      <div class="">
-                        <p>Place : {{image.location}}</p>
-                        <p>Category : {{image.category}}</p>
-                        <p>Description : {{image.description}}</p>
-                      </div>
-                      <div class=""style='margin-top:100px;'>
-                        <p>Posted <strong>{{image.pub_date|timesince}}</strong> ago</p>
-                        <p>by <strong>{{image.editor.first_name}}</strong></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-          </div> -->
-            {% endfor %}
-
-      </div>
-
+          </div>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </div>
+<footer>
 
+</footer>
 {% endblock %}
