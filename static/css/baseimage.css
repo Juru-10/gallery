@@ -20,3 +20,11 @@ img{
   height:200px;
   width:300px;
 }
+@media only screen and (max-width: 600px) {
+  .imgs {
+    display:grid;
+    grid-template-columns: 80%;
+    /* grid-auto-rows: 25.6em;
+    grid-gap: 60px;" */
+  }
+}

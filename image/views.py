@@ -58,25 +58,26 @@ def search_results(request):
         message = "You haven't searched for any term"
         return render(request, 'all-image/search.html',{"message":message})
 
-# def image_details(request):
+# def image_details(request,image_id):
 #     try:
-#         image = Image.objects.get(pk = image_id)
+#         image = Image.objects.get(id = image_id)
 #     except DoesNotExist:
 #         raise Http404()
-#     return render(request,"all-image/image.html", {"image":image})
+#     return render(request,"all-image/image.html", {"image":image},image_id)
 
 def image_details(request):
-    pk=Image.id
-    image = Image.objects.get(pk)
-    return render(request,"all-image/image.html", {"image":image,'pk':image.id})
+    # pk=Image.id
+    image = Image.objects.get(id)
+    image=Image.image_details(id)
+    return render(request,"all-image/image.html", {"image":image})
 
 def all_images(request):
     image=Image.objects.all()
     date=dt.date.today()
-    if date == dt.date.today():
-        image = Image.todays_image()
-    else:
-        image = Image.days_image(date)
+    # if date == dt.date.today():
+    #     image = Image.todays_image()
+    # else:
+    #     image = Image.days_image(date)
 
     return render(request,"all-image/today-image.html", {"date": date,"image":image})
 

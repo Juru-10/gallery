@@ -98,7 +98,7 @@ class Image(models.Model):
 
     @classmethod
     def image_details(cls,image_id):
-        image = cls.objects.get(pk = image_id)
+        image = cls.objects.get(id = image_id)
         return image
 
     # @classmethod

@@ -7,15 +7,15 @@
   <!-- Looping through images   -->
   <div class="row">
 
-      <div class=""style="display:grid;grid-template-columns: 30% 30% 30%;
+      <div class="imgs"style="display:grid;grid-template-columns: 30% 30% 30%;
           grid-auto-rows: 25.6em;
           grid-gap: 60px;">
             {% for image in image %}
-            <div class="">
+            <div id="img">
               <h2> {{ image.name }} </h2>
               <a href="{% url 'image_details' %}"><img style="height:200px;width:300px;"src="{{image.image.url}}" class="img-responsive" alt="Image"></a>
-              <p>Posted {{image.pub_date|timesince}} ago</p>
-              <p>by {{image.editor.first_name}}</p>
+              <p>Posted <strong>{{image.pub_date|timesince}}</strong> ago</p>
+              <p>by <strong>{{image.editor.first_name}}</strong></p>
             </div>
             {% endfor %}
 
