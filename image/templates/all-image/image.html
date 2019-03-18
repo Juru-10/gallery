@@ -3,23 +3,30 @@
  {% block content %}
 
  <div class="container">
+   <!-- <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> -->
 
    <div class="row">
-     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-       <h1 class="text-center">{{image.name}}</h1>
-       <img src="{{image.image.url}}" alt="{{image.name}}">
+     {%for image in image%}
+     <div class="" style=''>
+
+       <h1 class="">{{image.name}}</h1>
+       <img src="{{image.image.url}}" style='float:left;height:80%;width:50%;margin-right:60px;' alt="{{image.name}}">
      </div>
 
-     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-       <p>{{image.location}}</p>
-       <p>{{image.category}}</p>
-       <p>{{image.description}}</p>
+     <div class="" style='margin-top:100px;'>
+       <div class="">
+         <p>Place : {{image.location}}</p>
+         <p>Category : {{image.category}}</p>
+         <p>Description : {{image.description}}</p>
+       </div>
+       <div class=""style='margin-top:100px;'>
+         <p>Posted <strong>{{image.pub_date|timesince}}</strong> ago</p>
+         <p>by <strong>{{image.editor.first_name}}</strong></p>
+       </div>
      </div>
+     {%endfor%}
    </div>
-  <div class="row">
-     <p>Posted {{image.pub_date|timesince}} by {{image.editor.first_name}}</p>
-  </div>
-
  </div>
+ <!-- </div> -->
 
  {% endblock %}

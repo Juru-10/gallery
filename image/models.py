@@ -97,8 +97,8 @@ class Image(models.Model):
         return image
 
     @classmethod
-    def image_details(cls,image_id):
-        image = cls.objects.get(id = image_id)
+    def image_details(cls,id):
+        image = cls.objects.filter(id__icontains = id)
         return image
 
     # @classmethod

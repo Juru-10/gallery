@@ -20,11 +20,17 @@ img{
   height:200px;
   width:300px;
 }
-@media only screen and (max-width: 600px) {
-  .imgs {
-    display:grid;
-    grid-template-columns: 80%;
-    /* grid-auto-rows: 25.6em;
-    grid-gap: 60px;" */
-  }
+.modal-dialog{
+  width:100%;
+  height: 100%;
+  /* background-color: rgba(0,0,0,0.3); */
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content{
+  background-color: white;
+  border-radius: 20px;
+  padding:20px;
 }

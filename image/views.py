@@ -65,35 +65,15 @@ def search_results(request):
 #         raise Http404()
 #     return render(request,"all-image/image.html", {"image":image},image_id)
 
-def image_details(request):
-    # pk=Image.id
-    image = Image.objects.get(id)
-    image=Image.image_details(id)
-    return render(request,"all-image/image.html", {"image":image})
+def image_details(request,id):
+    # id=int(Image.pk)
+    # image = Image.objects.get(id=6)
+    image = Image.image_details(id)
+    print(image)
+    return render(request,"all-image/image.html", {"image":image,"id":id})
 
 def all_images(request):
     image=Image.objects.all()
     date=dt.date.today()
-    # if date == dt.date.today():
-    #     image = Image.todays_image()
-    # else:
-    #     image = Image.days_image(date)
 
     return render(request,"all-image/today-image.html", {"date": date,"image":image})
-
-# def form():
-#     form=SearchForm()
-#     if form.is_valid():
-#
-#         return render('all-image/search.html')
-
-# def search_lctn(request):
-#     if 'image' in request.GET and request.GET["image"]:
-#         search_loc = request.GET.get("image")
-#         searched_images_loc = Image.filter_by_location(search_loc)
-#         message = f"{search_loc}"
-#         return render(request, 'all-image/search.html',{"message":message,"images":searched_images_loc})
-#
-#     else:
-#         message = "You haven't searched for any term"
-#         return render(request, 'all-image/search.html',{"message":message})
