@@ -14,14 +14,14 @@ and
 
 * Go to you machine terminal
 * Install Python3.6 and its third party *django* modules
-* Write 'git clone https://github.com/Juru-10/blog.git'
+* Write 'git clone https://github.com/Juru-10/gallery.git'
 OR
 * Go to https://github.com
 * Search for Juru-10
 * Go to Juru-10 repositories
 * Get the repository called *gallery*
 OR
-* Go to https://github.com/Juru-10/blog.git
+* Go to https://github.com/Juru-10/gallery.git
 OR
 * Install the Heroku CLI
 * Download and install the Heroku CLI.
@@ -30,15 +30,14 @@ OR
 
 * $ heroku login
 * Clone the repository
-* Use Git to clone wecodeblog's source code to your local machine.
+* Use Git to clone gallery1010's source code to your local machine.
 
-* $ heroku git:clone -a wecodeblog
-* $ cd wecodeblog
+* $ heroku git:clone -a gallery1010
+* $ cd gallery1010
 
 ## link to it on Heroku
 
-https://wecodeblog.herokuapp.com/
-
+https://gallery1010.herokuapp.com/
 ## Known Bugs
 
 This app may not meet all the desired services as the user need but,
