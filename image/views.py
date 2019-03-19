@@ -2,10 +2,13 @@ from django.shortcuts import render,redirect
 from django.http  import HttpResponse,Http404
 import datetime as dt
 from .models import Image
-# from .forms import SearchForm
+import pyperclip
+
+# def link_to_img():
+    # pyperclip.copy(Image.image.url)
+    # pyperclip.paste()
 
 
-# Create your views here.
 def welcome(request):
     return HttpResponse('Welcome to Gallery')
 
@@ -75,5 +78,7 @@ def image_details(request,id):
 def all_images(request):
     image=Image.objects.all()
     date=dt.date.today()
+    # for image in image:
+    #     pyperclip.copy(image.url)
 
     return render(request,"all-image/today-image.html", {"date": date,"image":image})

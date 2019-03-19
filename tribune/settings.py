@@ -108,14 +108,14 @@ WSGI_APPLICATION = 'tribune.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'tribune',
-        'USER': 'wecode',
-    'PASSWORD':'123456',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME':'tribune',
+#         'USER': 'wecode',
+#     'PASSWORD':'123456',
+#     }
+# }
 
 
 # Password validation
