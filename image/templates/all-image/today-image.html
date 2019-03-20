@@ -9,7 +9,7 @@
     <div class="imgs">
       {% for image in image %}
         <div id="img" style='float:left;margin:3%;'>
-          <h2> {{ image.name }} </h2>
+          <h3> {{ image.name }} </h3>
           <a href="{% url 'image_details' image.id %}" data-toggle="modal" data-target="#Modal"><img style="height:200px;width:300px;"src="{{image.image.url}}" class="img-responsive" alt="Image"></a>
           <span>
             <textarea rows="2" cols="25" readonly id="link">{{image.image.url}}</textarea>
@@ -26,7 +26,7 @@
           <p>by <strong>{{image.editor.first_name}}</strong></p>
         </div>
         <div id="Modal" class="modal fade" role="dialog">
-          <div class="modal-dialog">
+          <div class="modal-dialog" syle="width:65%;height:80%;">
             <div class="modal-content">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
               <div class="modal-title"><h3>Image Details</h3></div>
