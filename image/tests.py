@@ -1,6 +1,7 @@
 from django.test import TestCase
 from .models import Editor,Image,Location,Category
 import datetime as dt
+# from django.db.models import Q
 
 class EditorTestClass(TestCase):
 
@@ -72,8 +73,8 @@ class ImageTestClass(TestCase):
         self.new_image= Image(name = 'Test Image',description = 'This is a random test Post',editor = self.assumpta,location = self.new_loc,category = self.new_cat)
         self.new_image.save()
 
-        self.new_image.Location.add(self.new_loc)
-        self.new_image.Category.add(self.new_cat)
+        # self.new_image.location.save(self.new_loc)
+        # self.new_image.category.save(self.new_cat)
 
     def tearDown(self):
         Editor.objects.all().delete()
@@ -92,14 +93,16 @@ class ImageTestClass(TestCase):
         self.assertTrue(len(image_by_date) == 0)
 
 
-    def test_get_image_by_id(self):
-        image_by_id = Image.get_image_by_id()
-        self.assertTrue(len(image_by_id)>0)
+    # def test_get_image_by_id(self):
+    #     image_by_id = Image.get_image_by_id()
+    #     self.assertTrue(len(image_by_id)>0)
 
-    def test_search_image(self):
-        search_image = Image.search_image()
-        self.assertTrue(len(search_image)>0)
+    # def test_search_image(self):
+    #     search_cat =
+    #     search_loc =
+    #     search_image = Image.search_image(search_cat,search_loc)
+    #     self.assertTrue(len(search_image)>0)
 
-    def test_filter_by_location(self):
-        filter_by_location = Image.filter_by_location()
-        self.assertTrue(len(filter_by_location)>0)
+    # def test_filter_by_location(self):
+    #     filter_by_location = Image.filter_by_location()
+    #     self.assertTrue(len(filter_by_location)>0)
